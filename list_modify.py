@@ -12,8 +12,20 @@ def put(value, lst):
         put("Blue", colors) -> 1
         # colors ahora es ["Red", "Blue", "Green"]
     """
-    return "ANSWER HERE"  # Remove this line and implement
 
+    if "" not in lst:
+        return -1
+    else:
+        suma = -1
+        for elemento in lst:
+            suma += 1
+            if elemento == "":
+                lst[suma] = value
+                return suma
+
+
+
+print(put("red",["Red", "" , "Green"]))
 
 def remove(value, lst):
     """
@@ -26,4 +38,14 @@ def remove(value, lst):
         remove("Red", colors) -> 2
         # colors ahora es ["", "Green", "", "Blue"]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    suma = -1
+    eli = 0
+    for elemento in lst:
+        suma += 1
+        if elemento == value:
+            lst[suma]=""
+            eli += 1
+    print(lst)
+    return eli
+
+print(remove("Black", ["Red", "Green", "White", "Black", "Pink", "Yellow", "Black"]))

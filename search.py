@@ -7,7 +7,19 @@ def index_of(target, lst):
 
     Ejemplo: index_of("Black", ["Red", "Green", "Black"]) -> 2
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if target not in lst:
+        return -1
+    else:
+        suma = -1
+        for elemento in lst:
+            suma += 1
+            if target == elemento:
+                return suma
+
+
+print(index_of("Black", ["Red", "Green", "Black"]))
+print(index_of("Black", ["Red", "Green"]))
+
 
 
 def index_of_by_index(target, lst, start):
@@ -18,7 +30,21 @@ def index_of_by_index(target, lst, start):
 
     Ejemplo: index_of_by_index("Black", ["Red", "Black", "Green", "Black"], 2) -> 3
     """
-    return "ANSWER HERE"  # Remove this line and implement
+
+    nueva = lst[start:]
+    if target not in nueva:
+        return -1
+    else:
+        suma = -1
+        for elemento in lst:
+            suma += 1
+            if suma >= start:
+                if target == elemento:
+                    return suma
+
+
+print(index_of_by_index("Black", ["Red", "Green", "Black"], 2))
+print(index_of_by_index("Black", ["Red", "Green", "White", "Black", "Pink", "Yellow", "Black"], 4))
 
 
 def index_of_empty(lst):
@@ -28,4 +54,14 @@ def index_of_empty(lst):
 
     Ejemplo: index_of_empty(["Red", "", "Green"]) -> 1
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if "" not in lst:
+        return -1
+    else:
+        suma = -1
+        for elemento in lst:
+            suma += 1
+            if elemento == "":
+                return suma
+
+print(index_of_empty(["Red", "", "Green"]))
+print(index_of_empty(["Red", "Green"]))
